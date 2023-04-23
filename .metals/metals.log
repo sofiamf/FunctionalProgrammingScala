@@ -1,0 +1,93 @@
+2023.04.18 15:53:54 INFO  Started: Metals version 0.11.11 in workspace '/Users/sofia.ferreira/Source/FunctionalProgrammingScala' for client Visual Studio Code 1.74.0.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/Users/sofia.ferreira/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.04.18 15:53:54 INFO  time: initialize in 0.3s
+2023.04.18 15:53:55 WARN  Build server is not auto-connectable.
+2023.04.18 15:53:55 WARN  no build tool detected in workspace '/Users/sofia.ferreira/Source/FunctionalProgrammingScala'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.18 15:53:55 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/Main.scala
+2023.04.18 15:53:57 INFO  no build target found for /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.18 15:53:57 INFO  time: code lens generation in 2.37s
+2023.04.18 15:56:10 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week1/Lists.scala
+Apr 18, 2023 3:57:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+WARNING: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "textDocument/didOpen",
+  "params": {
+    "textDocument": {
+      "uri": "file:///Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/example/ListsSuite.scala",
+      "languageId": "scala",
+      "version": 1,
+      "text": "package example\n\n/**\n * This class implements a munit test suite for the methods in object\n * `Lists` that need to be implemented as part of this assignment. A test\n * suite is simply a collection of individual tests for some specific\n * component of a program.\n *\n * To run this test suite, start \"sbt\" then run the \"test\" command.\n */\nclass ListsSuite extends munit.FunSuite:\n\n  /**\n   * Tests are written using the `test(\"description\") { ... }` syntax\n   * The most common way to implement a test body is using the method `assert`\n   * which tests that its argument evaluates to `true`. So one of the simplest\n   * successful tests is the following:\n   */\n  test(\"one plus one is two (0pts)\") {\n    assert(1 + 1 \u003d\u003d 2)\n  }\n\n  test(\"one plus one is three (0pts)?\") {\n    assert(1 + 1 \u003d\u003d 2) // This assertion fails! Go ahead and fix it.\n  }\n\n  /**\n   * One problem with the previous (failing) test is that munit will\n   * only tell you that a test failed, but it will not tell you what was\n   * the reason for the failure. The output looks like this:\n   *\n   * {{{\n   * \u003d\u003d\u003e X example.ListSuite.one plus one is three (0pts)?  0.007s munit.FailException: /tmp/example/src/test/scala/example/ListSuite.scala:26 assertion failed\n   * 25:  test(\"one plus one is two (0pts)\") {\n   * 26:      assert(1 + 1 \u003d\u003d 3)\n   * 27:  }\n   * }}}\n   *\n   * This situation can be improved by using a assertEquals\n   * (this is only possible in munit). So if you\n   * run the next test, munit will show the following output:\n   *\n   * {{{\n   * \u003d\u003d\u003e X example.ListSuite.details why one plus one is not three (0pts)  0.006s munit.FailException: /tmp/example/src/test/scala/example/ListSuite.scala:72\n   * 71:  test(\"details why one plus one is not three (0pts)\") {\n   * 72:      assertEquals(1 + 1, 3) // Fix me, please!\n   * 73:  }\n   * values are not the same\n   * \u003d\u003e Obtained\n   * 3\n   * \u003d\u003e Diff (- obtained, + expected)\n   * -3\n   * +2\n   * }}}\n   *\n   * We recommend to always use the assertEquals equality operator\n   * when writing tests.\n   */\n  test(\"details why one plus one is not three (0pts)\") {\n    assertEquals(1 + 1, 2) // Fix me, please!\n  }\n\n  /**\n   * Exceptional behavior of a methods can be tested using a try/catch\n   * and a failed assertion.\n   *\n   * In the following example, we test the fact that the method `intNotZero`\n   * throws an `IllegalArgumentException` if its argument is `0`.\n   */\n   test(\"intNotZero throws an exception if its argument is 0\") {\n     try\n       intNotZero(0)\n       fail(\"No exception has been thrown\")\n     catch\n       case e: IllegalArgumentException \u003d\u003e ()\n   }\n\n   def intNotZero(x: Int): Int \u003d\n     if x \u003d\u003d 0 then throw IllegalArgumentException(\"zero is not allowed\")\n     else x\n\n  /**\n   * Now we finally write some tests for the list functions that have to be\n   * implemented for this assignment. We fist import all members of the\n   * `List` object.\n   */\n  import Lists.*\n\n\n  /**\n   * We only provide two very basic tests for you. Write more tests to make\n   * sure your `sum` and `max` methods work as expected.\n   *\n   * In particular, write tests for corner cases: negative numbers, zeros,\n   * empty lists, lists with repeated elements, etc.\n   *\n   * It is allowed to have multiple `assert` statements inside one test,\n   * however it is recommended to write an individual `test` statement for\n   * every tested aspect of a method.\n   */\n  test(\"sum of a few numbers (10pts)\") {\n    assert(sum(List(1,2,0)) \u003d\u003d 3)\n  }\n\n  test(\"max of a few numbers (10pts)\") {\n    assert(max(List(3, 7, 2)) \u003d\u003d 7)\n  }\n\n\n\n  import scala.concurrent.duration.*\n  override val munitTimeout \u003d 1.seconds\n"
+    }
+  }
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: java.lang.reflect.InvocationTargetException
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:119)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.NoSuchFileException: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/example/ListsSuite.scala
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:218)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3289)
+	at scala.meta.internal.io.PlatformFileIO$.slurp(PlatformFileIO.scala:45)
+	at scala.meta.internal.io.FileIO$.slurp(FileIO.scala:24)
+	at scala.meta.internal.metals.MetalsLspService.didOpen(MetalsLspService.scala:1097)
+	at scala.meta.metals.lsp.DelegatingScalaService.didOpen(DelegatingScalaService.scala:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	... 13 more
+
+2023.04.18 15:57:43 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/test/scala/example/ListsSuite.scala
+2023.04.18 15:59:23 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/test/scala/example/ListsSuite.scala
+2023.04.18 15:59:58 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week1/Lists.scala
+2023.04.18 15:59:58 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/example/Lists.scala
+2023.04.18 16:00:03 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/Main.scala
+2023.04.18 16:00:05 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/example/Lists.scala
+2023.04.18 16:00:50 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week1/RecFun.scala
+2023.04.18 16:00:58 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week1/RecFunInterface.scala
+2023.04.18 16:01:30 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/test/scala/week1/RecFunSuite.scala
+2023.04.19 15:34:05 INFO  Shutting down server
+2023.04.19 15:34:05 INFO  shutting down Metals
+2023.04.19 15:34:05 INFO  Exiting server
+2023.04.21 18:00:39 INFO  Started: Metals version 0.11.11 in workspace '/Users/sofia.ferreira/Source/FunctionalProgrammingScala' for client Visual Studio Code 1.74.0.
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/Users/sofia.ferreira/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.11.0/scribe-slf4j_2.13-3.11.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.04.21 18:00:39 INFO  time: initialize in 0.29s
+2023.04.21 18:00:39 WARN  Build server is not auto-connectable.
+2023.04.21 18:00:39 WARN  no build tool detected in workspace '/Users/sofia.ferreira/Source/FunctionalProgrammingScala'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.21 18:00:40 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/Main.scala
+2023.04.21 18:00:41 INFO  no build target found for /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.21 18:00:42 INFO  time: code lens generation in 1.75s
+2023.04.23 16:55:27 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/test/scala/week2/FunSets.scala
+2023.04.23 16:56:24 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week1/RecFunInterface.scala
+2023.04.23 16:56:25 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week2/Main.scala
+2023.04.23 16:56:27 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/Main.scala
+2023.04.23 16:56:28 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week2/Main.scala
+2023.04.23 16:56:59 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/test/scala/week2/FunSetSuite.scala
+2023.04.23 16:57:06 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week2/FunSetsInterface.scala
+2023.04.23 16:57:07 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week2/FunSets.scala
