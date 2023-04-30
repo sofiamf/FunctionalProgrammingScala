@@ -91,3 +91,27 @@ SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
 2023.04.23 16:56:59 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/project/test/scala/week2/FunSetSuite.scala
 2023.04.23 16:57:06 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week2/FunSetsInterface.scala
 2023.04.23 16:57:07 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week2/FunSets.scala
+2023.04.23 16:57:58 INFO  Shutting down server
+2023.04.23 16:57:58 INFO  shutting down Metals
+2023.04.23 16:57:58 INFO  Exiting server
+2023.04.30 13:33:47 INFO  Started: Metals version 0.11.12 in workspace '/Users/sofia.ferreira/Source/FunctionalProgrammingScala' for client Visual Studio Code 1.74.0.
+Apr 30, 2023 1:33:47 PM org.flywaydb.core.internal.license.VersionPrinter printVersionOnly
+INFO: Flyway Community Edition 9.16.3 by Redgate
+Apr 30, 2023 1:33:47 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: See release notes here: https://rd.gt/416ObMi
+Apr 30, 2023 1:33:47 PM org.flywaydb.core.internal.license.VersionPrinter printVersion
+INFO: 
+Apr 30, 2023 1:33:48 PM org.flywaydb.core.internal.database.base.BaseDatabaseType createDatabase
+INFO: Database: jdbc:h2:file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/.metals/metals (H2 2.1)
+Apr 30, 2023 1:33:48 PM org.flywaydb.core.internal.command.DbValidate validate
+INFO: Successfully validated 4 migrations (execution time 00:00.008s)
+Apr 30, 2023 1:33:48 PM org.flywaydb.core.internal.command.DbMigrate migrateGroup
+INFO: Current version of schema "PUBLIC": 4
+Apr 30, 2023 1:33:48 PM org.flywaydb.core.internal.command.DbMigrate logSummary
+INFO: Schema "PUBLIC" is up to date. No migration necessary.
+2023.04.30 13:33:48 INFO  time: initialize in 0.27s
+2023.04.30 13:33:48 WARN  Build server is not auto-connectable.
+2023.04.30 13:33:48 WARN  no build tool detected in workspace '/Users/sofia.ferreira/Source/FunctionalProgrammingScala'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. 
+2023.04.30 13:33:49 WARN  no build target for: /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week3/TweetSetSuite.scala
+2023.04.30 13:33:50 INFO  no build target found for /Users/sofia.ferreira/Source/FunctionalProgrammingScala/functionalprogrammingscala/src/main/scala/week3/TweetSetSuite.scala. Using presentation compiler with project's scala-library version: 3.2.2
+2023.04.30 13:33:50 INFO  time: code lens generation in 2.08s
