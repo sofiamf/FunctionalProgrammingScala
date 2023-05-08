@@ -1,0 +1,19 @@
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(sbtMapExec 7 __6fc95d86-e3c7-4c58-bbe0-098bd8ddacc8, None, None)
+[debug] > Exec(bspScalaTestClasses file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala-build file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala/Compile file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala/Test, Some(__6fc95d86-e3c7-4c58-bbe0-098bd8ddacc8), Some(CommandSource(network-1)))
+[debug] jsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Processing buildTarget/scalaTestClasses"})
+[debug] Evaluating tasks: bspScalaTestClasses
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] buildTarget/scalaTestClasses is a no-op for build.sbt targets: [BuildTargetIdentifier(file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala-build)]
+[debug] jsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskStart, {"taskId":{"id":"5","parents":[]},"eventTime":1683577100322,"message":"Compiling functionalprogrammingscala","dataKind":"compile-task","data":{"target":{"uri":"file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala/Compile"}}})
+[debug] jsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskFinish, {"taskId":{"id":"5","parents":[]},"eventTime":1683577100324,"message":"Compiled functionalprogrammingscala","status":1,"dataKind":"compile-report","data":{"target":{"uri":"file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala/Compile"},"errors":0,"warnings":0,"time":2}})
+[debug] jsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskStart, {"taskId":{"id":"6","parents":[]},"eventTime":1683577100327,"message":"Compiling functionalprogrammingscala-test","dataKind":"compile-task","data":{"target":{"uri":"file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala/Test"}}})
+[debug] jsonRpcNotify: JsonRpcNotificationMessage(2.0, build/taskFinish, {"taskId":{"id":"6","parents":[]},"eventTime":1683577100329,"message":"Compiled functionalprogrammingscala-test","status":1,"dataKind":"compile-report","data":{"target":{"uri":"file:/Users/sofia.ferreira/Source/FunctionalProgrammingScala/#functionalprogrammingscala/Test"},"errors":0,"warnings":0,"time":2}})
+[success] Total time: 0 s, completed 8 May 2023, 21:18:20
+[debug] > Exec(sbtCompleteExec 7, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(sbtReportResult 7, Some(7), Some(CommandSource(network-1)))
+[debug] unmatched Processing event for requestId Some(7): None
+[debug] unmatched json response for requestId Some(7): {"status":"Done","channelName":"network-1","execId":"7","commandQueue":["shell"],"exitCode":0}
+[debug] > Exec(shell, None, None)
